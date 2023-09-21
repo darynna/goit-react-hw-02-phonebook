@@ -1,5 +1,6 @@
+import {ContactItems, DeleteButton, SpanName} from './ContactListItem.styled'
 export const ContactListItem = ({contact, handleDeleteContacts}) =>{
     return(
-        <li><p>{contact.name}: {contact.number}</p><button type="button" onClick={() => handleDeleteContacts(contact.name)}>Delete</button></li>
+        <ContactItems><p><SpanName>{contact.name}:</SpanName> {contact.number}</p><DeleteButton type="button" onClick={() => handleDeleteContacts(contact.name)}>Delete</DeleteButton></ContactItems>
     )
 }

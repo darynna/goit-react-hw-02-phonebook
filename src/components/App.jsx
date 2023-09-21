@@ -3,6 +3,7 @@ import { ContactForm } from "./ContactForm/ContactForm";
 import { ContactList } from "./ContactList/ContactList";
 import { Filter } from "./SearchFilter/SearchFilter";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import {MainWrap,  Title} from './App.styled'
 
 export class App extends Component{
   state = {
@@ -46,14 +47,14 @@ export class App extends Component{
   render(){
     const filteredContacts = this.handleFilter()
     return(
-      <div>
-        <h1>Phonebook</h1>
+      <MainWrap>
+        <Title>Phonebook</Title>
         <ContactForm handleAddContacts={this.handleAddContacts}/>
         <Filter value={this.state.filter} onChange={this.handleFilterInputChange}/>
 
-        <h2>Contacts</h2>
+        <Title>Contacts</Title>
         <ContactList contacts={filteredContacts} handleDeleteContacts={this.handleDeleteContacts}/>
-      </div>
+      </MainWrap>
     )
   }
 }

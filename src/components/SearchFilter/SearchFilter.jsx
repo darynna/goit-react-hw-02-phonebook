@@ -1,3 +1,6 @@
+import {FilterInput, FilterLable} from './SearchFilter.styled'
+import { FaSearch } from 'react-icons/fa';
+
 export const Filter = ({value, onChange}) => {
-    return <label>Find contacts by name<input type="text" value={value} onChange={onChange}/></label>
+    return <FilterLable>Find contacts by name<FilterInput type="text" value={value} onChange={onChange}/><FaSearch/></FilterLable>
 }
