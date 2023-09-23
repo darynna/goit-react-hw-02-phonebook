@@ -15,7 +15,7 @@ export class App extends Component{
   }
 
   handleAddContacts = (newContact) => {
-   const hasContactDuplicate = this.state.contacts.some(contact => contact.name === newContact.name)
+   const hasContactDuplicate = this.state.contacts.some(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())
    if(hasContactDuplicate){
     Notify.failure(`${newContact.name} is already in your contacts`)
     return
@@ -25,10 +25,10 @@ export class App extends Component{
    }))
   }
 
-  handleDeleteContacts = (contactName) => {
+  handleDeleteContacts = (contactId) => {
     this.setState(prevState => {
       return{
-        contacts: prevState.contacts.filter((contact) => contact.name !== contactName)
+        contacts: prevState.contacts.filter((contact) => contact.id !== contactId)
       }
     })
   }
